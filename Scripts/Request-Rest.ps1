@@ -53,7 +53,7 @@ function Request-Rest{
     $request.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f")
 
     #Request Method
-    $request.Method = "POST"
+    $request.Method = "GET"
 
     #Headers
     if($listUpdate)
