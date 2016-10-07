@@ -47,4 +47,4 @@ foreach($resource in $resources)
     $TagsAsString = ""
 }
 
-$results | export-csv -Path "C:\DATA\Projects\Accudyne\Resources By Tags\Tags-Accudyne-Operations-Production.csv" -NoTypeInformation
+$results | export-csv -Path "C:\DATA\Resources By Tags\Tags-MSDN-Subscription.csv" -NoTypeInformation
