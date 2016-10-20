@@ -1,8 +1,8 @@
-﻿#Uncomment the below line
+﻿#The below line will prompt for your 
 Login-AzureRmAccount
 
+#Selecting the subscription if you have more than one subscriptions in your Azure account
 Select-AzureRmSubscription -SubscriptionId "1aa1aaa1-111-11a1-1a1e-bdf5f12e61db"
-#Select-AzureRmSubscription -SubscriptionId "1ea2dfe3-5183-44a3-8e8e-bdf5f12e61db"
 
 $StorageAccountName = "armtemplatesrepo"
 $ResourceGroupNameOfStorage = "ARMTemplatesRG"
