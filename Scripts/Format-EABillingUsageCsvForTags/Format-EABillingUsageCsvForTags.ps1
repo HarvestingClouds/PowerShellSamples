@@ -38,10 +38,10 @@
 #>
 
 #Path variable to the CSV file
-$PathOfInputBillingUsageCsv = "C:\Users\aman.sharma\Documents\GitHub\PowerShellSamples\Scripts\Format-EABillingUsageCsvForTags\Sample Input - EA Azure Billing CSV.csv"
+$PathOfInputBillingUsageCsv = "C:\FullPath\Sample Input - EA Azure Billing CSV.csv"
 
 $dateTime = Get-Date -Format "yyyy-MM-dd-hh-mm"
-$PathToOutputCSVReport = "C:\Users\aman.sharma\Documents\GitHub\PowerShellSamples\Scripts\Format-EABillingUsageCsvForTags\UsageWithTags-"+ $dateTime +".csv"
+$PathToOutputCSVReport = "C:\FullPath\UsageWithTags-"+ $dateTime +".csv"
 
 if(Test-Path $PathOfInputBillingUsageCsv)
 {
