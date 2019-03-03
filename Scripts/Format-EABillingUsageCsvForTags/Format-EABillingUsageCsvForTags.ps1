@@ -38,10 +38,10 @@
 #>
 
 #Path variable to the CSV file
-$PathOfInputBillingUsageCsv = "C:\DATA\\DetailedUsageCsv.May.31.15.00.11111.csv"
+$PathOfInputBillingUsageCsv = "C:\Users\aman.sharma\Documents\GitHub\PowerShellSamples\Scripts\Format-EABillingUsageCsvForTags\Sample Input - EA Azure Billing CSV.csv"
 
 $dateTime = Get-Date -Format "yyyy-MM-dd-hh-mm"
-$PathToOutputCSVReport = "C:\DATA\Projects\UsageWithTags-"+ $dateTime +".csv"
+$PathToOutputCSVReport = "C:\Users\aman.sharma\Documents\GitHub\PowerShellSamples\Scripts\Format-EABillingUsageCsvForTags\UsageWithTags-"+ $dateTime +".csv"
 
 if(Test-Path $PathOfInputBillingUsageCsv)
 {
@@ -57,10 +57,8 @@ if(Test-Path $PathOfInputBillingUsageCsv)
         #TODO 1 - Change these to the actual tags in your environment
         $ApplicationOwner = ""
         $ApplicationType = ""
-        $CostCenter = ""
+        $BusinessUnit = ""
         $Department = ""
-        $BuildDate = ""
-        $ApplicationCategory = ""
         
         #region Parsing Tags
 
@@ -69,7 +67,7 @@ if(Test-Path $PathOfInputBillingUsageCsv)
             #Converting tags to PowerShell variable
             $psTags = $null
             #TODO 2 - Change these to the actual tags in your environment
-            $tags1 = $tags.Replace("ApplicationOwner","ApplicationOwner1").Replace("ApplicationType","ApplicationType1").Replace("Department","Department1").Replace("CostCenter","CostCenter1").Replace("BuildDate","BuildDate1").Replace("ApplicationCategory","ApplicationCategory1")
+            $tags1 = $tags.Replace("ApplicationOwner","ApplicationOwner1").Replace("ApplicationType","ApplicationType1").Replace("Department","Department1").Replace("BusinessUnit","BusinessUnit1")
 
             $psTags = ConvertFrom-Json $tags1
 
@@ -90,33 +88,17 @@ if(Test-Path $PathOfInputBillingUsageCsv)
             {
                 $ApplicationType = $psTags."Application Type"
             }
-            if($tags1.Contains("CostCenter1"))
+            if($tags1.Contains("BusinessUnit1"))
             {
-                $CostCenter = $psTags.CostCenter1
+                $BusinessUnit = $psTags.BusinessUnit1
             }
-            if($tags1.Contains("Cost Center"))
+            if($tags1.Contains("Business Unit"))
             {
-                $CostCenter = $psTags."Cost Center"
+                $BusinessUnit = $psTags."Business Unit"
             }
             if($tags1.Contains("Department1"))
             {
                 $Department = $psTags.Department1
-            }
-            if($tags1.Contains("BuildDate1"))
-            {
-                $BuildDate = $psTags.BuildDate1
-            }
-            if($tags1.Contains("Build Date"))
-            {
-                $BuildDate = $psTags."Build Date"
-            }
-            if($tags1.Contains("ApplicationCategory1"))
-            {
-                $ApplicationCategory = $psTags.ApplicationCategory1
-            }
-            if($tags1.Contains("Application Category"))
-            {
-                $ApplicationCategory = $psTags."Application Category"
             }
         }
         #endregion
@@ -125,10 +107,8 @@ if(Test-Path $PathOfInputBillingUsageCsv)
         $_ | 
       Add-Member -MemberType NoteProperty -Name ApplicationOwner -Value $ApplicationOwner -PassThru |
       Add-Member -MemberType NoteProperty -Name ApplicationType -Value $ApplicationType -PassThru |
-      Add-Member -MemberType NoteProperty -Name CostCenter -Value $CostCenter -PassThru |
-      Add-Member -MemberType NoteProperty -Name Department -Value $Department -PassThru |
-      Add-Member -MemberType NoteProperty -Name BuildDate -Value $BuildDate -PassThru |
-      Add-Member -MemberType NoteProperty -Name ApplicationCategory -Value $ApplicationCategory -PassThru
+      Add-Member -MemberType NoteProperty -Name BusinessUnit -Value $BusinessUnit -PassThru |
+      Add-Member -MemberType NoteProperty -Name Department -Value $Department -PassThru 
 
     } |
     Export-CSV $PathToOutputCSVReport -NoTypeInformation -ErrorAction Stop
