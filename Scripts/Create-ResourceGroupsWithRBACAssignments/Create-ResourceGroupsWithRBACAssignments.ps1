@@ -1,4 +1,4 @@
-﻿$RGNamesUSE2 = "RG-01-Test-USE2", "RG-02-Test-USE2", "RG-03-Test-USE2", "RG-03-Test-USE2","RG-04-Test-USE2"
+﻿$RGNamesUSE = "RG-01-Test-USE", "RG-02-Test-USE", "RG-03-Test-USE", "RG-03-Test-USE","RG-04-Test-USE"
 $RGNamesUSNC = "RG-01-Test-USNC", "RG-02-Test-USNC", "RG-03-Test-USNC", "RG-04-Test-USNC"
 
 
@@ -9,7 +9,7 @@ $ADGroup01 = Get-AzureRmADGroup -SearchString "ADGroup-01-Test-Contributors"
 $App01 = Get-AzureRmADServicePrincipal -SearchString "AD-AppRegistration01-Test"
 $ADGroup02 = Get-AzureRmADGroup -SearchString "ADGroup-02-Test-Readers"
 
-foreach($rg in $RGNamesUSE2)
+foreach($rg in $RGNamesUSE)
 {
     New-AzureRmResourceGroup -Name $rg -Location eastus2
 
