@@ -1,5 +1,5 @@
-﻿
-#Add-AzureRmAccount
+﻿#Logging into Azure
+Add-AzureRmAccount
 
 Select-AzureRmSubscription -SubscriptionName "Subscription Name"
 

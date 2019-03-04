@@ -1,7 +1,7 @@
 ﻿
 $storageAccountName = "sttemp01"
 $storageAccountKey = "YourKey"
-$absoluteUri = "https://StorageAccountName.blob.core.windows.net/ContainerName/abcd?sv=2017-04-17&sr=b&si=b33474f4-9711-4d0f-8e35-c9f4512738d7&sig=signature"
+$absoluteUri = "https://StorageAccountName.blob.core.windows.net/ContainerName/abcd?sv=2017-04-17&sr=b&si=aaaaaaaa-1111-1111-1111-aaaaaaaa&sig=signature"
 $destContainer = "vhds"
 $blobName = "VMName-osdisk.vhd"
 
@@ -12,10 +12,10 @@ $targetBlob = Get-AzureStorageBlob -Blob $blobName -Container $destContainer -Co
 
 $copyState = $targetBlob | Get-AzureStorageBlobCopyState
 
-        while ($copyState.Status -ne "Success")
-        {
-            $percent = ($copyState.BytesCopied / $copyState.TotalBytes) * 100
-            Write-Host "Completed $('{0:N2}' -f $percent)%"
-            sleep -Seconds 20
-            $copyState = $targetBlob | Get-AzureStorageBlobCopyState
-        }
+while ($copyState.Status -ne "Success")
+{
+    $percent = ($copyState.BytesCopied / $copyState.TotalBytes) * 100
+    Write-Host "Completed $('{0:N2}' -f $percent)%"
+    sleep -Seconds 20
+    $copyState = $targetBlob | Get-AzureStorageBlobCopyState
+}
