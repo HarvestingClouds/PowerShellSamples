@@ -4,16 +4,16 @@ Function Get-PendingReboot
 This will query the local machine for pending reboot information.
 	
 .EXAMPLE
-    C:\Users\svc_azure_siterecovp\Downloads> import-module .\Get-PendingReboot.ps1
-    C:\Users\svc_azure_siterecovp\Downloads> $Servers = Get-Content C:\Users\svc_azure_siterecovp\Downloads\Servers.txt
-    C:\Users\svc_azure_siterecovp\Downloads> Get-PendingReboot -Computer $Servers | Export-Csv C:\Users\svc_azure_siterecovp\Downloads\PendingRebootReport.csv -NoTypeInformation
+    C:\Users\aman\Downloads> import-module .\Get-PendingReboot.ps1
+    C:\Users\aman\Downloads> $Servers = Get-Content C:\Users\aman\Downloads\Servers.txt
+    C:\Users\aman\Downloads> Get-PendingReboot -Computer $Servers | Export-Csv C:\Users\aman\Downloads\PendingRebootReport.csv -NoTypeInformation
 	
 or for interactive in the powershell windows view (this view will display the file name pending rename )
 
 .EXAMPLE
- C:\Users\svc_azure_siterecovp\Downloads> import-module .\Get-PendingReboot.ps1
- C:\Users\svc_azure_siterecovp\Downloads> $Servers = Get-Content C:\Users\svc_azure_siterecovp\Downloads\Servers.txt
- C:\Users\svc_azure_siterecovp\Downloads> Get-PendingReboot -Computer $Servers
+ C:\Users\aman\Downloads> import-module .\Get-PendingReboot.ps1
+ C:\Users\aman\Downloads> $Servers = Get-Content C:\Users\aman\Downloads\Servers.txt
+ C:\Users\aman\Downloads> Get-PendingReboot -Computer $Servers
 
 #>
 
