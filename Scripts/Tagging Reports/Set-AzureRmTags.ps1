@@ -95,7 +95,7 @@ foreach($eachRecord in $csvContent)
         else
         {
             #Setting the tags on a resource which doesn't have tags
-            Set-AzureRmResource -Tag @{ CostCenter=$CostCenter; ApplicationOwner=$ApplicationOwner; ApplicationType=$ApplicationType; Department=$Department; BuildDate=$BuildDate; ApplicationCategory=$ApplicationCategory } -ResourceId $r.ResourceId -Force
+            Set-AzureRmResource -Tag @{ CostCenter=$CostCenter; ApplicationOwner=$ApplicationOwner; ApplicationType=$ApplicationType; Department=$Department; BuildDate=$BuildDate } -ResourceId $r.ResourceId -Force
         }
     }
     else
