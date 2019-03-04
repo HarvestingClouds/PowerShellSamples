@@ -12,7 +12,7 @@ param (
 [String] $VMName = $NameOfVM
 [String] $VMResourceGroup = $ResourceGroupNameOfVM
 
-$Cred = Get-AutomationPSCredential -Name 'ASRServicePrincipal'
+$Cred = Get-AutomationPSCredential -Name 'ServicePrincipalName'
 
 #Connect to Azure
 $AzureRMConn = Login-AzureRmAccount -ServicePrincipal -Credential $Cred -TenantId $AzureTenantId -ErrorAction SilentlyContinue -ErrorVariable LoginError
