@@ -60,7 +60,6 @@ if($VMMapColl -ne $null)
 else
 {
      Write-Verbose -Message "VMMapColl Variable is Null"
-     #Write-Output -Message "VMMapColl Variable is Null"
 }
 
 $CollectionCount = $VMCollection.Count
