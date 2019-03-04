@@ -1,6 +1,8 @@
 param (
         [parameter(Mandatory=$true)]
-        [Object]$VM
+        [String]$NameOfTheVM,
+        [parameter(Mandatory=$true)]
+        [String]$IPOfVM
       )
 
 #TESTING
@@ -11,8 +13,8 @@ param (
 $HKLM = [UInt32] "0x80000002"
 $MachineKey = "SYSTEM\CurrentControlSet\Services\Tcpip\Parameters"
 
-[String] $VMName = $VM.Name
-[String] $VMIP = $VM.VMIPAddress
+[String] $VMName = $NameOfTheVM
+[String] $VMIP = $IPOfVM
 
 Write-Verbose "VMName               : $VMName"
 Write-Verbose "VMIP                 : $VMIP"
