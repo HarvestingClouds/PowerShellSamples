@@ -7,7 +7,7 @@
 	
 	Purpose:	To get the report for tags of all the resources in Azure
 					
-	Version: 	1.0.0.0 
+	Version: 	3.0.0.0 
 
 	Author:	    Aman Sharma
  	==============================================================================================
@@ -18,14 +18,11 @@
 	This script is used to get the report for tags of all the resources in Azure. 
 		
  .EXAMPLE
-	C:\PS>  .\Get-AzureRmVMDiskDetails.ps1 -SubscriptionName "Your-Subscription-Name-Here"  
+	C:\PS>  .\Get-AzureRmTagsReport.ps1 
 	
 	Description
 	-----------
-	This command executes the script with default parameters. Replace the value for SubscriptionName parameter as per your environment.
-     
- .PARAMETER SubscriptionName
-    This is the name of the subscription for which you want the report. 
+	This command executes the script with default parameters. 
  
  .INPUTS
     None.
@@ -123,30 +120,6 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
                 {
                     $BuildDate = $Tags["Build Date"]
                 }
-                if($Tags.ContainsKey("ApplicationCategory"))
-                {
-                    $ApplicationCategory = $Tags["ApplicationCategory"]
-                }
-                if($Tags.ContainsKey("Application Category"))
-                {
-                    $ApplicationCategory = $Tags["Application Category"]
-                }
-                if($Tags.ContainsKey("CapitalProject"))
-                {
-                    $CapitalProject = $Tags["CapitalProject"]
-                }
-                if($Tags.ContainsKey("Capital Project"))
-                {
-                    $CapitalProject = $Tags["Capital Project"]
-                }
-                if($Tags.ContainsKey("CapitalProjectName"))
-                {
-                    $CapitalProjectName = $Tags["CapitalProjectName"]
-                }
-                if($Tags.ContainsKey("Capital Project Name"))
-                {
-                    $CapitalProjectName = $Tags["Capital Project Name"]
-                }
                 
             }
             else
@@ -166,14 +139,11 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
                         SubscriptionName = $sub.Name
                         Sku = $resource.Sku
                         ApplicationOwner = $ApplicationOwner
-                        ApplicationCategory = $ApplicationCategory
                         ApplicationType = $ApplicationType
                         CostCenter = $CostCenter
                         Department = $Department
                         BuildDate = $BuildDate
                         AllTags = $TagsAsString
-                        CapitalProject = $CapitalProject
-                        CapitalProjectName = $CapitalProjectName
                 }                           
                 $results += New-Object PSObject -Property $details 
 
