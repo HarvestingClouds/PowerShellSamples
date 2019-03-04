@@ -40,30 +40,12 @@ function Apply-HubLicensing {
         else
         {
             Write-Host "Verified that the VM $virtualMachineName does not have the HUB license applied to it."
-            Write-Host "Stopping the VM $virtualMachineName."
-            Stop-AzureRmVM -ResourceGroupName $ResourceGroupName -Name  $virtualMachineName -Force
-
-            $currentVm.OSProfile = $null
-            $currentVm.StorageProfile.ImageReference = $null
-            if ($currentVm.StorageProfile.OsDisk.Image) 
-            {
-                $currentVm.StorageProfile.OsDisk.Image = $null
-                }
-            $currentVm.StorageProfile.OsDisk.CreateOption = 'Attach'
-            for ($s=1;$s -le $currentVm.StorageProfile.DataDisks.Count ; $s++ )
-            {
-                $currentVm.StorageProfile.DataDisks[$s-1].CreateOption = 'Attach'
-            }
-
-            Write-Host "Removing the VM $virtualMachineName."
-            Remove-AzureRmVM -Name $currentVm.Name -ResourceGroupName $currentVm.ResourceGroupName -Force
-
-            Start-sleep 10
-
-            Write-Host "Recreating the VM $virtualMachineName."
-            New-AzureRmVM -ResourceGroupName $currentVm.ResourceGroupName -Location $currentVm.Location -VM $currentVm -LicenseType "Windows_Server"
             
-            Write-Verbose "Successfully applied HUB licensing on the VM $virtualMachineName."
+            Write-Host "Setting the License Type for Hub Licensing"
+            $currentVm.LicenseType = "Windows_Server"
+
+            Write-Host "Updating the VM"
+            Update-AzureRmVM -VM $currentVm -ResourceGroupName $ResourceGroupName
         }
     }
     else

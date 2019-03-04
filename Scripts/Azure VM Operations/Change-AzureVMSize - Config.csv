@@ -1,4 +1,4 @@
-Computer,OSType,SizeConversionNeeded,NewVMComputeSize
-VM1,Windows,No,na
-VM2,Windows,Yes,Standard_DS4_v2
-VM3,Windows,No,na
+Computer,OSType,SizeConversionNeeded,NewVMComputeSize,ResourceGroupName
+VM1,Windows,no,na,VM RG Name
+VM2,Windows,yes,Standard_DS4_v2,VM RG Name
+VM3,Windows,no,na,VM RG Name
