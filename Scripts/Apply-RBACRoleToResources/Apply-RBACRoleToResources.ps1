@@ -4,9 +4,9 @@
 .DESCRIPTION
    PowerShell script will grant role to users or groups at Subscription/ResourceGroup/VirtualMachine Level
 .EXAMPLE
-   Add-VMRBAC -csvLocation "C:\Users\aman\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "VirtualMachine" -UserNames "gurpreet,aman" -GroupNames "abac" 
+   Apply-RBACRoleToResources -csvLocation "C:\Users\Gurpreet.sambhi\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "VirtualMachine" -UserNames "gurpreet,aman" -GroupNames "abac" 
 .EXAMPLE
-   Add-VMRBAC -csvLocation "C:\Users\aman\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "ResourceGroup" -UserNames "gurpreet,aman" -GroupNames "abac" 
+   Apply-RBACRoleToResources -csvLocation "C:\Users\Gurpreet.sambhi\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "ResourceGroup" -UserNames "gurpreet,aman" -GroupNames "abac" 
 .INPUTS
    CSVLocation, role, scope, usernames, groupnames,
     •	csvLocation:- Path of the CSV File
@@ -26,7 +26,7 @@
 .FUNCTIONALITY
    The functionality that best describes this cmdlet
 #>
-Function Add-VMRBAC
+Function Apply-RBACRoleToResources
 {
     param 
     (
