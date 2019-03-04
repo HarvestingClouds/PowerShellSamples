@@ -4,9 +4,9 @@
 .DESCRIPTION
    PowerShell script will grant role to users or groups at Subscription/ResourceGroup/VirtualMachine Level
 .EXAMPLE
-   Apply-RBACRoleToResources -csvLocation "C:\Users\aman\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "VirtualMachine" -UserNames "gurpreet,aman" -GroupNames "abac" 
+   Apply-RBACRoleToResources -csvLocation "C:\Users\aman\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "VirtualMachine" -UserNames "user1,user2" -GroupNames "abac" 
 .EXAMPLE
-   Apply-RBACRoleToResources -csvLocation "C:\Users\aman\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "ResourceGroup" -UserNames "gurpreet,aman" -GroupNames "abac" 
+   Apply-RBACRoleToResources -csvLocation "C:\Users\aman\Documents\AzureVM.csv" -role "Virtual Machine Operator" -Scope "ResourceGroup" -UserNames "user1,user2" -GroupNames "abac" 
 .INPUTS
    CSVLocation, role, scope, usernames, groupnames,
     •	csvLocation:- Path of the CSV File
