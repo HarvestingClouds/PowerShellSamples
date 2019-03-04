@@ -1,8 +1,18 @@
-﻿#View existing Azure Role Definition
-Get-AzureRMRoleDefinition -Name "Virtual Machine Operator" | ConvertTo-Json
+﻿$SubscriptionName = "SubscriptionName"
+$roleName = "Virtual Machine Operator"
+
+#region Loggin in and selecting Subscription
+Add-AzureRmAccount
+
+Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+
+#endregion
+
+#View existing Azure Role Definition
+Get-AzureRMRoleDefinition -Name $roleName | ConvertTo-Json
 
 #Fetching the existing Role
-$role = Get-AzureRmRoleDefinition "Virtual Machine Operator"
+$role = Get-AzureRmRoleDefinition $roleName
 
 #Updating the existing Role
 $role.Actions.Add("Microsoft.Compute/virtualMachines/deallocate/action")
