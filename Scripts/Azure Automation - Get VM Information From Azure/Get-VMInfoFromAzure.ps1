@@ -1,14 +1,16 @@
 param (
     [parameter(Mandatory=$true)]
-    [Object]$VM,
+    [String]$NameOfVM,
+    [parameter(Mandatory=$true)]
+    [String]$ResourceGroupNameOfVM,
     [parameter(Mandatory=$true)]
     [String]$AzureTenantId,
     [parameter(Mandatory=$true)]
     [String] $SubscriptionID
 )
 
-[String] $VMName = $VM.RoleName
-[String] $VMResourceGroup = $VM.ResourceGroupName
+[String] $VMName = $NameOfVM
+[String] $VMResourceGroup = $ResourceGroupNameOfVM
 
 $Cred = Get-AutomationPSCredential -Name 'ASRServicePrincipal'
 
@@ -30,21 +32,6 @@ else
         Write-Verbose "Setting Subscription to Id: $SubscriptionID"
         $ConnSubs = Select-AzureRmSubscription -SubscriptionId $SubscriptionID
         $VM = Get-AzureRmVM -ResourceGroupName $VMResourceGroup -Name $VMName
-
-        <#
-        $VMNetworkInterfaces = Get-AzureRmNetworkInterface -ResourceGroupName $VMResourceGroup | Where-Object {$_.Name -like "$VMName*"}
-        
-        $VMNICCount = $VMNetworkInterfaces.Count
-
-        if($VMNICCount -gt 1)
-        {
-            $VMMainIPConfig = $VMNetworkInterfaces[0] | Get-AzureRmNetworkInterfaceIpConfig
-        }
-        else
-        {
-            $VMMainIPConfig = $VMNetworkInterfaces | Get-AzureRmNetworkInterfaceIpConfig
-        }
-        #>
 
         #Change Start
         $nicId = $VM.NetworkProfile.NetworkInterfaces[0].Id
