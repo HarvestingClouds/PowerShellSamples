@@ -1,9 +1,9 @@
 ﻿
 $storageAccountName = "sttemp01"
-$storageAccountKey = "d7fXPAIwn1pHemTEN8RBYGXvIyUiH+JQNppwigY6dUsfQHAWglPjryvKkkEGPoHriHwc+iIjxNBoMjW3hoaOjQ=="
-$absoluteUri = "https://md-w3r4xdkvmmth.blob.core.windows.net/pvk0bggcjrnh/abcd?sv=2017-04-17&sr=b&si=b33474f4-9711-4d0f-8e35-c9f4512738d7&sig=sNJjIrMKZxGS4rDhbk6LsbKyE%2FNXla834cV9GH5hsYc%3D"
+$storageAccountKey = "YourKey"
+$absoluteUri = "https://StorageAccountName.blob.core.windows.net/ContainerName/abcd?sv=2017-04-17&sr=b&si=b33474f4-9711-4d0f-8e35-c9f4512738d7&sig=signature"
 $destContainer = "vhds"
-$blobName = "E2vwa-grcp1d-osdisk.vhd"
+$blobName = "VMName-osdisk.vhd"
 
 $destContext = New-AzureStorageContext –StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 $targetBlob = Start-AzureStorageBlobCopy -AbsoluteUri $absoluteUri -DestContainer $destContainer -DestContext $destContext -DestBlob $blobName
