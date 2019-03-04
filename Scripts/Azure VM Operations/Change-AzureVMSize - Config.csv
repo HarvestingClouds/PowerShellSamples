@@ -1,0 +1,4 @@
+Computer,OSType,SizeConversionNeeded,NewVMComputeSize
+VM1,Windows,No,na
+VM2,Windows,Yes,Standard_DS4_v2
+VM3,Windows,No,na

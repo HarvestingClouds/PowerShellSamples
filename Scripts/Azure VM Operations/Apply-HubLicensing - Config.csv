@@ -1,0 +1,4 @@
+Computer,HUBLicensingNeeded,ResourceGroupName,OSType
+VMName1,Yes,Script-Dev-RG,Windows
+VMName2,Yes,Script-Dev-RG,Windows
+VMName3,no,Script-Dev-RG,Windows

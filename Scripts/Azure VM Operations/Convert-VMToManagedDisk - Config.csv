@@ -1,0 +1,4 @@
+Computer,ManagedDiskConversion,OSType,ResourceGroupName
+VM1,no,Windows,Script-Dev-RG
+VM2,no,Windows,Script-Dev-RG
+VM3,yes,Windows,Script-Dev-RG

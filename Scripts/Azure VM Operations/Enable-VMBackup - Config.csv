@@ -1,0 +1,4 @@
+Computer,OSType,ResourceGroupName,EnableBackup,RecoveryServicesVaultName,BackupProtectionPolicy
+VMName1,Windows,Script-Dev-RG,no,na,na
+VMName2,Windows,Script-Dev-RG,yes,ARMBackup-CentralUS,Daily-30--Weekly-8--Monthly-6
+VMName3,Windows,Script-Dev-RG,yes,ARMBackup-CentralUS,Daily-30--Weekly-8--Monthly-6
