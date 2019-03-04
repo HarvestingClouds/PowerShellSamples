@@ -30,9 +30,9 @@ foreach($sub in $subs)
         New-AzureRmResourceLock -LockLevel CanNotDelete -LockName DoNotDelete -ResourceName $expressRoute.Name -ResourceType $expressRoute.Type -ResourceGroupName $expressRoute.ResourceGroupName -LockNotes "Do Not Delete Lock" -Confirm -Force
     }
 
-    #region 4. Virtual network Gateway Connections
+    #region 4. Virtual network Gateway
     $gateway = $null
-    $rgName = "RG-Operations-Infra-Prod-USE2"
+    $rgName = "RG-Test-USE2"
     if((Get-AzureRmResourceGroup -Name $rgName -ErrorAction Ignore) -ne $null)
     {
         $gateways = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $rgName
@@ -43,7 +43,7 @@ foreach($sub in $subs)
         }
     }
     $gateway = $null
-    $rgName = "RG-Operations-Infra-Prod-USNC"
+    $rgName = "RG-Test-USNC"
     if((Get-AzureRmResourceGroup -Name $rgName -ErrorAction Ignore) -ne $null)
     {
         $gateways = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $rgName
@@ -58,7 +58,7 @@ foreach($sub in $subs)
     #region 5. Virtual Network Gateway Connections
     # 5.1 USE Region
     $gateway = $null
-    $rgName = "RG-Operations-Infra-Prod-USE"
+    $rgName = "RG-Test-USE"
     if((Get-AzureRmResourceGroup -Name $rgName -ErrorAction Ignore) -ne $null)
     {
         $gatewayConnections = Get-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName $rgName
@@ -71,7 +71,7 @@ foreach($sub in $subs)
 
     # 5.2 USNC region
     $gateway = $null
-    $rgName = "RG-Operations-Infra-Prod-USNC"
+    $rgName = "RG-Test-USNC"
     if((Get-AzureRmResourceGroup -Name $rgName -ErrorAction Ignore) -ne $null)
     {
         $gatewayConnections = Get-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName $rgName

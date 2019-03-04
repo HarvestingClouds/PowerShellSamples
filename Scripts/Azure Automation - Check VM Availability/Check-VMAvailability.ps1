@@ -23,7 +23,7 @@ Write-Verbose "VMIP                 : $VMIP"
 [String] $ErrorDetails = ""
 [Boolean] $ResultAction = $false
 
-$Cred = Get-AutomationPSCredential -Name 'ASRServiceAccount'
+$Cred = Get-AutomationPSCredential -Name 'AutomationCredentialName'
 
 #PING CHECK
 Write-Verbose "Check if VM is accessible by Ping"
