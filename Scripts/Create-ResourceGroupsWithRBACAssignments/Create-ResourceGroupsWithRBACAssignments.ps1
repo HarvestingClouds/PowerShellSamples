@@ -11,7 +11,7 @@ $ADGroup02 = Get-AzureRmADGroup -SearchString "ADGroup-02-Test-Readers"
 
 foreach($rg in $RGNamesUSE)
 {
-    New-AzureRmResourceGroup -Name $rg -Location eastus2
+    New-AzureRmResourceGroup -Name $rg -Location eastus
 
     New-AzureRmRoleAssignment -ObjectId $ADGroup01.Id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
 
