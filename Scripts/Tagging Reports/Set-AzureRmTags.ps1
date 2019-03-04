@@ -7,7 +7,7 @@ $InputCSVFilePath = "C:\DATA\TagsReportInputs.csv"
 
 
 #Adding Azure Account and Subscription
-#Add-AzureRmAccount
+Add-AzureRmAccount
 
 $csvContent = Import-Csv -Path $InputCSVFilePath
 
@@ -22,7 +22,6 @@ foreach($eachRecord in $csvContent)
     $ApplicationType = $eachRecord.ApplicationType
     $Department = $eachRecord.Department
     $BuildDate = $eachRecord.BuildDate
-    $ApplicationCategory = $eachRecord.ApplicationCategory
     $subscriptionName = $eachRecord.SubscriptionName
 
     if($BuildDate -ne $null)
@@ -89,27 +88,13 @@ foreach($eachRecord in $csvContent)
             {
                 $r.Tags.Add("BuildDate", $BuildDate) 
             }
-        
-            # Tag - Application Category
-            if($r.Tags.ContainsKey("ApplicationCategory"))
-            {
-                $r.Tags["ApplicationCategory"] = $ApplicationCategory
-            }
-            else
-            {
-                $r.Tags.Add("ApplicationCategory", $ApplicationCategory) 
-            }
-        
+            
+            #Setting the tags on the resource
             Set-AzureRmResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
         }
         else
         {
-            #$r.Tags.Add("CostCenter", $CostCenter) 
-            #$r.Tags.Add("ApplicationOwner", $ApplicationOwner) 
-            #$r.Tags.Add("ApplicationType", $ApplicationType) 
-            #$r.Tags.Add("Department", $Department) 
-            #$r.Tags.Add("BuildDate", $BuildDate) 
-            #$r.Tags.Add("ApplicationCategory", $ApplicationCategory)
+            #Setting the tags on a resource which doesn't have tags
             Set-AzureRmResource -Tag @{ CostCenter=$CostCenter; ApplicationOwner=$ApplicationOwner; ApplicationType=$ApplicationType; Department=$Department; BuildDate=$BuildDate; ApplicationCategory=$ApplicationCategory } -ResourceId $r.ResourceId -Force
         }
     }
@@ -117,7 +102,4 @@ foreach($eachRecord in $csvContent)
     {
         Write-Host "Resource Not Found with Resource Id: " + $ResourceId
     }
-    #Setting the Tags on the Resource
-    #Set-AzureRmResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
-
 }
