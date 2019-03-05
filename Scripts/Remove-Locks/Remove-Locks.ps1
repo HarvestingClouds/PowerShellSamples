@@ -18,11 +18,13 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
         #Getting all Azure Route Tables
         $routeTables = Get-AzureRmRouteTable
 
+        #Iterating through Route Tables
         foreach($routeTable in $routeTables)
         {
-                Remove-AzureRmResourceLock -LockName DoNotDelete -ResourceGroupName $routeTable.ResourceGroupName -ResourceName $routeTable.Name -ResourceType $routeTable.Type -Force
+            #Removing locks from the Route Tables
+            Remove-AzureRmResourceLock -LockName DoNotDelete -ResourceGroupName $routeTable.ResourceGroupName -ResourceName $routeTable.Name -ResourceType $routeTable.Type -Force
         }
 
-        }
+    }
 
-        }
+}
