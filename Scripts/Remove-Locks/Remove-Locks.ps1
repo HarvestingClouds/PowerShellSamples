@@ -1,4 +1,6 @@
-﻿$subs = Get-AzureRmSubscription
+﻿Add-AzureRmAccount
+
+$subs = Get-AzureRmSubscription
 
 #Checking if the subscriptions are found or not
 if(($subs -ne $null) -or ($subs.Count -gt 0))
