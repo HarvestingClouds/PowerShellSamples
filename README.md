@@ -1,4 +1,4 @@
-# PowerShell Script Samples for various Azure related Automation scenarios 
+# PowerShell Script Samples to automate various Azure related scenarios 
 
 Collection of various PowerShell **reusable** functions and scripts.
 
