@@ -1,0 +1,4 @@
+vNetResourceGroupName,subnetAddressPrefix,subnetName,virtualNetworkName,routeTableName,routeResourceGroup,subscriptionId
+RGName1,10.10.0.0/24,Subnet1,vNet1,RouteTable1,RouteTableRGName1,aaaaaaa-1111-1111-1111-aaaaaaaaaaaa
+RGName1,10.11.0.0/24,Subnet2,vNet1,RouteTable1,RouteTableRGName1,aaaaaaa-1111-1111-1111-aaaaaaaaaaaa
+RGName2,10.12.0.0/24,Subnet3,vNet1,RouteTable2,RouteTableRGName2,aaaaaaa-1111-1111-1111-aaaaaaaaaaaa
