@@ -10,7 +10,7 @@ $BuildDate = "01/01/2019"
 $tagsHashTable = @{ApplicationOwner=$ApplicationOwner;ApplicationType=$ApplicationType;Department=$Department;CostCenter=$CostCenter;BuildDate=$BuildDate}
 $csvUDRsContent = Import-Csv -Path $UDRsCSVFilePath
 
-#Add-AzureRmAccount
+Add-AzureRmAccount
 
 foreach($eachUDR in $csvUDRsContent)
 {

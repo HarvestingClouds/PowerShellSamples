@@ -3,7 +3,7 @@
 	==============================================================================================
 	Copyright (c) Microsoft Corporation.  All rights reserved.   
 	
-	File:		Report-UDRsWithSubnetInfo.ps1
+	File:		Disassociate-SubnetsFromUDRs.ps1
 	
 	Purpose:	To get the report for tags of all the resources in Azure
 					
@@ -18,7 +18,7 @@
 	This script is used to disassociate subnets from route tables. 
 		
  .EXAMPLE
-	C:\PS>  .\Report-UDRsWithSubnetInfo.ps1 
+	C:\PS>  .\Disassociate-SubnetsFromUDRs.ps1 
 	
 	Description
 	-----------
@@ -34,10 +34,8 @@
 	None.
 #>
 
-$PathToOutputCSVReport = "C:\DATA\report.csv"
-
 #Adding Azure Account and Subscription
-#Add-AzureRmAccount
+Add-AzureRmAccount
 
 #Getting all Azure Subscriptions
 $subs = Get-AzureRmSubscription
@@ -45,9 +43,6 @@ $subs = Get-AzureRmSubscription
 #Checking if the subscriptions are found or not
 if(($subs -ne $null) -or ($subs.Count -gt 0))
 {
-    #Creating Output Object
-    $results = @()
-
     #Iterating over various subscriptions
     foreach($sub in $subs)
     {
@@ -62,8 +57,7 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
 
         foreach($routeTable in $routeTables)
         {
-            $routeTableName = $routeTable.Name
-            $routeResourceGroup = $routeTable.ResourceGroupName
+            $routeName = $routeTable.Name
             Write-Output $routeName
 
             #Fetch Route Subnets
@@ -83,25 +77,32 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
                 $virtualNetworkName = $splitarray[8]
                 $subnetName = $splitarray[10]
 
-                $subnetAddressPrefix = $subnet.AddressPrefix
-
-                $details = @{            
-                        routeTableName=$routeTableName
-                        routeResourceGroup=$routeResourceGroup
-                        subnetName=$subnetName
-                        subscriptionId=$subscriptionId
-                        vNetResourceGroupName=$vNetResourceGroupName
-                        virtualNetworkName=$virtualNetworkName
-                        subnetAddressPrefix=$subnetAddressPrefix
-                }                           
-                $results += New-Object PSObject -Property $details
+                #$subnet = Get-AzureRmResource -ResourceId $subnetId
+                write-output $subnet.Name
+                ####$NSG=Get-AzureRmNetworkSecurityGroup | where { $_.ID -eq $NSGid }
                 
+                $virtualNetwork = Get-AzureRmVirtualNetwork -Name $virtualNetworkName -ResourceGroupName $vNetResourceGroupName
+                
+                $subnet = $virtualNetwork.Subnets | where {$_.Name -eq $subnetName}
+
+                #### Setting the Route table to Null
+                $subnet.RouteTable = $null
+
+                $subnetAddressPrefix = $subnet.AddressPrefix
+                
+                #Setting and committing the changes
+                Set-AzureRmVirtualNetworkSubnetConfig `
+                  -Name $subnetName `
+                  -VirtualNetwork $virtualNetwork `
+                  -AddressPrefix $subnetAddressPrefix `
+                  -RouteTable $null |
+                Set-AzureRmVirtualNetwork
 
             }
 
         }
     }
-    $results | export-csv -Path $PathToOutputCSVReport -NoTypeInformation
+
 }
 else
 {
