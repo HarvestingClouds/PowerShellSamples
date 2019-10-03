@@ -35,4 +35,5 @@ The direct links to the related blog posts are:
  26. <a href="http://harvestingclouds.com/post/script-sample-removing-locks-from-azure-resources/" target="_blank">Removing Locks from Azure Resources</a>
  27. <a href="http://harvestingclouds.com/post/script-sample-generate-report-for-route-tables-with-associated-subnets-and-related-information/" target="_blank">Generate Report for Route Tables with associated Subnets and related information</a>
  28. <a href="http://harvestingclouds.com/post/script-sample-disassociate-and-associate-subnets-to-route-tables/" target="_blank">Disassociate and Associate Subnets to Route Tables</a>
+ 29. Get Subnets Report
 
