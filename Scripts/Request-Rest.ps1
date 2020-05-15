@@ -27,7 +27,7 @@ function Request-Rest{
         [Parameter(Mandatory=$false)]
         [Switch] $Raw
     )
-    #Create a URI instance since the HttpWebRequest.Create Method will escape the URL by default.   
+    #Create an instance of the URI since the HttpWebRequest.Create Method will escape the URL by default.   
     #$URL = Fix-Url $Url
     $URI = New-Object System.Uri($URL,$true)   
 

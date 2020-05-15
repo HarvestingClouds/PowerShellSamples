@@ -15,7 +15,7 @@
 	Azure Resources Tags Report Generation Script
   
  .DESCRIPTION
-	This script is used to get the report for tags of all the resources in Azure. 
+	This script is used to get report for tags of all the resources in Azure. 
 		
  .EXAMPLE
 	C:\PS>  .\Get-AzureRmVMDiskDetails.ps1 -SubscriptionName "Your-Subscription-Name-Here"  -OutputPath "C:\AzureData\TagsResults"
