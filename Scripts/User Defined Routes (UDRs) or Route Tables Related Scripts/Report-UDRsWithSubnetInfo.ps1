@@ -37,10 +37,10 @@
 $PathToOutputCSVReport = "C:\DATA\report.csv"
 
 #Adding Azure Account and Subscription
-Add-AzureRmAccount
+Add-AzAccount
 
 #Getting all Azure Subscriptions
-$subs = Get-AzureRmSubscription
+$subs = Get-AzSubscription
 
 #Checking if the subscriptions are found or not
 if(($subs -ne $null) -or ($subs.Count -gt 0))
@@ -55,10 +55,10 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
         Write-Output $SubscriptionName
 
         #Selecting the Azure Subscription
-        Select-AzureRmSubscription -SubscriptionName $SubscriptionId
+        Select-AzSubscription -SubscriptionName $SubscriptionId
 
         #Getting all Azure Route Tables
-        $routeTables = Get-AzureRmRouteTable
+        $routeTables = Get-AzRouteTable
 
         foreach($routeTable in $routeTables)
         {
