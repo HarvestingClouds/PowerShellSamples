@@ -83,6 +83,10 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
                 $virtualNetworkName = $splitarray[8]
                 $subnetName = $splitarray[10]
 
+                #Fetching the vNet and Subnet details
+                $vnet = Get-AzVirtualNetwork -Name $virtualNetworkName -ResourceGroupName $vNetResourceGroupName
+                $subnet = Get-AzVirtualNetworkSubnetConfig -Name $subnetName -VirtualNetwork $vnet
+		
                 $subnetAddressPrefix = $subnet.AddressPrefix
 
                 $details = @{            
