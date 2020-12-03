@@ -87,7 +87,7 @@ if(($subs -ne $null) -or ($subs.Count -gt 0))
                 $vnet = Get-AzVirtualNetwork -Name $virtualNetworkName -ResourceGroupName $vNetResourceGroupName
                 $subnet = Get-AzVirtualNetworkSubnetConfig -Name $subnetName -VirtualNetwork $vnet
 		
-                $subnetAddressPrefix = $subnet.AddressPrefix
+                $subnetAddressPrefix = $subnet.AddressPrefix[0]
 
                 $details = @{            
                         routeTableName=$routeTableName
