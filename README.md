@@ -36,4 +36,11 @@ The direct links to the related blog posts are:
  27. <a href="http://harvestingclouds.com/post/script-sample-generate-report-for-route-tables-with-associated-subnets-and-related-information/" target="_blank">Generate Report for Route Tables with associated Subnets and related information</a>
  28. <a href="http://harvestingclouds.com/post/script-sample-disassociate-and-associate-subnets-to-route-tables/" target="_blank">Disassociate and Associate Subnets to Route Tables</a>
  29. Get Subnets Report
-
+ 30. <a href="https://harvestingclouds.com/post/automatically-trigger-on-demand-azure-vm-backup-for-multiple-vms-code-sample/" target="_blank">Automatically trigger on-demand Azure VM Backup for multiple VMs</a>
+ 31. <a href="https://harvestingclouds.com/post/automatically-trigger-on-demand-sap-hana-on-azure-vm-backup-for-multiple-databases-code-sample/" target="_blank">Automatically trigger on-demand SAP HANA on Azure VM Backup for multiple Databases</a>
+ 32. <a href="https://harvestingclouds.com/post/moving-an-azure-virtual-machine-vm-to-an-availability-zone-the-automated-way-with-complete-code-sample/" target="_blank">Moving an Azure Virtual Machine (VM) to an Availability Zone the automated way</a>
+ 33. <a href="https://harvestingclouds.com/post/export-all-custom-azure-policies-code-sample/" target="_blank">Export all custom Azure Policies</a>
+ 34. <a href="https://harvestingclouds.com/post/automating-the-enabling-of-byos-licensing-for-all-red-hat-enterprise-linux-rhel-vms-in-azure-code-sample/" target="_blank">Automating the enabling of BYOS licensing for all Red Hat Enterprise Linux (RHEL) VMs in Azure</a>
+ 35. <a href="https://harvestingclouds.com/post/automating-the-enabling-of-byos-licensing-for-all-suse-vms-in-azure-code-sample/" target="_blank">Automating the enabling of BYOS licensing for all SUSE VMs in Azure</a>
+ 36. <a href="https://harvestingclouds.com/post/automate-locking-of-all-resources-of-a-particular-type-code-sample/" target="_blank">Automate locking of all resources of a particular type</a>
+ 37. <a href="https://harvestingclouds.com/post/installing-enhanced-monitoring-agent-for-multiple-sap-workloads-in-azure-code-sample/" target="_blank">Installing Enhanced Monitoring Agent for Multiple SAP workloads in Azure</a>
