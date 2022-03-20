@@ -1,3 +1,4 @@
+#Reference: https://docs.microsoft.com/en-us/azure/governance/policy/how-to/export-resources#export-with-azure-powershell
 #Logging into Azure
 $env = Get-AzEnvironment -Name "AzureCloud"
 Connect-AzAccount -Environment $env
