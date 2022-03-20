@@ -89,3 +89,7 @@ if(Test-FileExists -SourceFile $ConfigFilePath)
         Write-Verbose $Error[0].ToString()
 	}
 }
+else
+{
+    Write-Host "Please check the confi file is available at the path specified in the inputs."
+}
