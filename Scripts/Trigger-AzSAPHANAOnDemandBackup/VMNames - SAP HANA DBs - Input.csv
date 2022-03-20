@@ -1,0 +1,9 @@
+﻿VMName,InstanceName,DatabaseName,VMResourceGroup
+AccountsVM102,SID1,pbw,RG-RG-Of-The-VM
+AccountsVM102,SID1,systemdb,RG-RG-Of-The-VM
+FinanceVM01,SID2,pgr,RG-RG-Of-The-VM
+FinanceVM01,SID2,systemdb,RG-RG-Of-The-VM
+FinanceVM02,SID2,ppo,RG-RG-Of-The-VM
+FinanceVM02,SID2,systemdb,RG-RG-Of-The-VM
+FinanceVM03,SID2,ps4,RG-RG-Of-The-VM
+FinanceVM03,SID2,systemdb,RG-RG-Of-The-VM
