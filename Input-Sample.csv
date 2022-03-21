@@ -1,7 +1,0 @@
-Source Environment,SourceSubscription,Category,Source Server,Source IP - Indicative,SourceRG,SourceLocation,SourceVMName,Destination Server,DestinationIP-Actual
-Dev,Dev-Sub,Azure - Same Region - USE,Dev Web,10.0.0.4,RG-IT-Dev,eastus,accountsdev102,Dev Internal,10.0.2.40
-Hub,Hub-Sub,Azure - Same Region - USE,Hub Management,10.1.0.6,RG-Hub,eastus,hubmanage06,Prod Data,10.2.2.20
-Dev,Dev-Sub,Internet Connectivity,Dev Data,10.0.0.4,RG-IT-Dev,eastus,accountsdev102,Internet,142.251.41.78
-Prod,Prod-Sub,Internet Connectivity,Prod App,10.2.0.10,RG-IT-PROD,eastus,prodvm10,Internet,142.251.41.78
-Hub,Hub-Sub,Internet Connectivity,Hub App,10.1.0.6,RG-Hub,eastus,hubmanage06,Internet,142.251.41.78
-Dev,Dev-Sub,On Premises,Dev Data,10.0.0.4,RG-IT-Dev,eastus,accountsdev102,On Premises,155.155.10.10
