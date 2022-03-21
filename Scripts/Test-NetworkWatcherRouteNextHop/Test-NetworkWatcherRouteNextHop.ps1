@@ -1,5 +1,5 @@
 #Path Variables. Update as per your environment
-$InputVMsCSVFilePath = "D:\DATA\RoutesTestEnvironment\EnvironmentDetails-ForAutomation.csv" #Make sure you have updated this CSV as per your environment. This is the INPUT to the script
+$InputVMsCSVFilePath = "D:\DATA\RoutesTestEnvironment\Input-EnvironmentDetails-ForAutomation.csv" #Make sure you have updated this CSV as per your environment. This is the INPUT to the script
 $PathToOutputCSVReport = "D:\DATA\RoutesTestEnvironment\EnvironmentDetails-ForAutomation-Result.csv"
 #Inputs
 $subscriptionName = "you-subscription-name"
