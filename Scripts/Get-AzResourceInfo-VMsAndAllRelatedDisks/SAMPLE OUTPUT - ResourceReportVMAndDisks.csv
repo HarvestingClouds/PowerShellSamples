@@ -1,0 +1,15 @@
+Name,attachedToVM,VMSize,OSOrDataDisk,Sku,LUNNumber,OsType,diskType,ResourceGroupName,diskSize,SubscriptionName,Location,ResourceType,SubscriptionId,Caching,WriteAcceleratorEnabled
+Accounts101,Accounts101,Standard_D2as_v4,,,,Windows,,RG101,,Visual Studio Enterprise,eastus,Microsoft.Compute/virtualMachines,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,,
+Accounts101_Accounts101,Accounts101,Standard_D2as_v4,OS Disk,,,Windows,,RG101,127,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,ReadWrite,
+Accounts101_Disk101,Accounts101,Standard_D2as_v4,Data Disk,,0,Windows,Premium_LRS,RG101,4,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,None,FALSE
+Accounts102,Accounts102,Standard_B2ms,,,,Windows,,RG101,,Visual Studio Enterprise,eastus,Microsoft.Compute/virtualMachines,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,,
+Accounts102_OsDisk_1_1e8af287e75d4a408cc1c5d8c2b972c9,Accounts102,Standard_B2ms,OS Disk,,,Windows,Standard_LRS,RG101,127,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,ReadWrite,
+Accounts102_Data01,Accounts102,Standard_B2ms,Data Disk,,0,Windows,Premium_LRS,RG101,4,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,None,FALSE
+Accounts102_Data02,Accounts102,Standard_B2ms,Data Disk,,1,Windows,Premium_LRS,RG101,4,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,None,FALSE
+indiavm01,indiavm01,Standard_D2s_v3,,,,Windows,,RG-Secondary,,Visual Studio Enterprise,centralindia,Microsoft.Compute/virtualMachines,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,,
+indiavm01_OsDisk_1_8e1960eefbdd46f5a238851bfcc11b6d,indiavm01,Standard_D2s_v3,OS Disk,,,Windows,,RG-Secondary,127,Visual Studio Enterprise,centralindia,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,ReadWrite,
+DevVm102,DevVm102,Standard_D2s_v3,,,,Windows,,RG102,,Visual Studio Enterprise,eastus,Microsoft.Compute/virtualMachines,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,,
+DevVm102_disk1_e3a24711c8724e488e0f162fd7666a15,DevVm102,Standard_D2s_v3,OS Disk,,,Windows,,RG102,127,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,ReadWrite,
+DevVM101,DevVM101,Standard_D2s_v3,,,,Windows,,RG102,,Visual Studio Enterprise,eastus,Microsoft.Compute/virtualMachines,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,,
+DevVM101_OsDisk_1_1ba317f166b94311bedaf2eac6dadc40,DevVM101,Standard_D2s_v3,OS Disk,,,Windows,,RG102,127,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,ReadWrite,
+DevDataDisk01,DevVM101,Standard_D2s_v3,Data Disk,,0,Windows,Standard_LRS,RG102,4,Visual Studio Enterprise,eastus,Microsoft.Compute/disks,aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb,None,FALSE
