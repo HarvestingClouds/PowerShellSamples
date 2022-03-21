@@ -53,8 +53,9 @@ foreach($currentSubscription in $allSubscriptions)
     #Selecting current subscription
     Select-AzSubscription -SubscriptionId $currentSubscription.Id
 
-    #Selecting all RGs that begins with the text. Notice the wildcard in the name
-    $allFilteredRGs = Get-AzResourceGroup -Name "RG-StartingText*"
+    #Selecting all RGs 
+    #You can also specify filters here e.g. add some string before * to filter RGs that begins with that specific text.
+    $allFilteredRGs = Get-AzResourceGroup -Name "*"
 
     foreach($currentRG in $allFilteredRGs)
     {
