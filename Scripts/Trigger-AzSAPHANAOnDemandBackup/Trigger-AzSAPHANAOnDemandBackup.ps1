@@ -11,11 +11,16 @@ $rgOfVault = "RG-of-The-RecoveryServices-Vault"
 #endregion
 #endregion
 
-
+#NOTE: As the script uses both CLI and PowerShell cmdlets, we need to login via both methods and set the context to subscription. This is why you see login twice below.
 #Login
 az login
 # Set the Subscription Context
 az account set --subscription $subscriptionName
+
+#Login in Az Cmdlets
+Add-AzAccount
+#Set the Subscription Context
+Select-AzSubscription -SubscriptionName $subscriptionName
 
 #Internal custom funtion for checking if the file exists
 function Test-FileExists
