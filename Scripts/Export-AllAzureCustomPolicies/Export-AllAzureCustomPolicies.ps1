@@ -13,7 +13,7 @@ foreach($currentSubscription in $allSubscriptions)
     Set-AzContext -SubscriptionName $currentSubscription.Name
 
     #Getting all the custom policies
-    $policies = Get-AzPolicyDefinition | where {$_.Properties.PolicyType -eq 'Custom'}
+    $policies = Get-AzPolicyDefinition | where {$_.PolicyType -eq 'Custom'}
     
     #Iterating through the policies
     foreach ($policy in $policies) {
